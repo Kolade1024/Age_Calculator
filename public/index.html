@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <script defer src="/public/app.js"></script>
+    <link rel="stylesheet" href="/public/style.css" />
+    <title>Frontend Mentor | Age calculator app</title>
+  </head>
+
+  <body class="min-h-screen bg">
+
+    <section class="container min-h-screen p-4 flex flex-col md:justify-center md:items-center">
+
+      <main class=" relative w-full bg-white  rounded-t-[2rem] rounded-bl-[2rem] rounded-br-[4rem] p-4  flex flex-col justify-center items-center  max-w-[500px]">
+        <!-- INPUT FIELDS -->
+        <div class="inputFields flex flex-row justify-left gap-[1rem] w-full  pb-[3rem] border-b ">
+
+          <div class="day">
+            <span class="topSpan">DAY</span>
+            <input type="number" name="day" id="day" class="day noError" placeholder="DD">
+            <span class=" emPty errorState text-[0.5rem] italic hidden w-full  whitespace-nowrap">This field is required</span>
+            <span class="Valid text-[0.5rem] errorState italic hidden w-full  whitespace-nowrap">Must be a valid day</span>
+          </div>
+
+          <div class="Month">
+
+            <span class="topSpan">MONTH</span>
+
+            <input type="number" class ="month noError" name="month" id="month" placeholder="MM">
+
+            <span class=" emPty text-[0.5rem]       errorState italic hidden w-full  whitespace-nowrap">This field is required</span>
+
+            <span class="Valid text-0.5rem italic text-[0.5rem] errorState hidden w-full  whitespace-nowrap">Must be a valid month</span>
+          </div>
+          
+          <div class="Year">
+
+            <span class="topSpan">YEAR</span>
+
+            <input type="number" class="year noError" name="year" id="year" placeholder="YYYY">
+
+            <span class="emPty text-[0.5rem] errorState italic  w-full hidden whitespace-nowrap">This field is required</span>
+
+            <span class="Valid text-[0.5rem]  errorState italic hidden w-full  whitespace-nowrap">Must be in the past</span>
+          </div>
+        </div>
+        <div class=" arrow absolute bottom-[13rem] arrow  rounded-full p-[0.7rem] max-w-[55px] md:right-[1rem] ">
+          <img src="/public/assets/images/icon-arrow.svg" alt="arrow_icon">
+        </div>
+
+        <div class="age w-full mt-[2rem] text-[3rem] font-black  italic leading-[3.2rem] mb-[2rem]">
+            <p class="years"><span>--</span>&nbsp;years</p>
+            <p class="months"><span>--</span>&nbsp;months</p>
+            <p class="days"><span>--</span>&nbsp;days</p>
+        </div>
+      </main>
+    </section>
+   
+
+  </body>
+</html>
