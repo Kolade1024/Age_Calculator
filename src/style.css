@@ -40,6 +40,10 @@
     .arrow{
         background-color:   hsl(259, 100%, 65%);
     }
+    
+    button:hover{
+        background-color: black;
+    }
 
     .borderError{
         border: 1px solid  hsl(0, 100%, 67%);

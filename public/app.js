@@ -26,6 +26,7 @@ const Valid2 = document.querySelector(".Year .Valid");
 
 
 arrowBTN.addEventListener("click", (e)=>{
+
     let currentDate = new Date();
 
     currentYear = currentDate.getFullYear();
@@ -54,8 +55,19 @@ arrowBTN.addEventListener("click", (e)=>{
         MONTH.classList.add("noError");
         emPty.classList.add("hidden");
         Valid.classList.add("hidden");
-        monthsOld.textContent = Math.abs(currentMonth-MONTH.value+1);
+        let start = 0;
+        let end = Math.abs(currentMonth-MONTH.value+1);
+        let myInterval = setInterval(() => {
+            start++;
+            monthsOld.textContent = start;
+            if(start==end){
+                clearInterval(myInterval);
+            }
+        }, 50);
+        
     };
+
+   
 
     /* DAY VALIDATION */
     if(DAY.value>31){
@@ -78,7 +90,15 @@ arrowBTN.addEventListener("click", (e)=>{
         DAY.classList.add("noError");
         emPty1.classList.add("hidden");
         Valid1.classList.add("hidden");
-        daysOld.textContent = Math.abs(currentDay-DAY.value-1);
+        let start = 0;
+        let end = Math.abs(currentDay-DAY.value+1);
+        let myInterval = setInterval(() => {
+            start++;
+            daysOld.textContent = start;
+            if(start==end){
+                clearInterval(myInterval);
+            }
+        }, 50);
     };
 
 /* YEAR VALIDATION */
@@ -101,14 +121,16 @@ arrowBTN.addEventListener("click", (e)=>{
         YEAR.classList.add("noError");
         emPty2.classList.add("hidden");
         Valid2.classList.add("hidden");
-        yearsOld.textContent = Math.abs(currentYear-YEAR.value) ;
+        let start = 0;
+        let end = Math.abs(currentYear-YEAR.value);
+        let myInterval = setInterval(() => {
+            start++;
+            yearsOld.textContent = start;
+            if(start==end){
+                clearInterval(myInterval);
+            }
+        }, 50);
+        
     };
     
 })
-
-/* NUMBER ANIMATION */
-/* let numberAnimation = (actualVal)=>{
-    if(shownVal!=actualVal){
-        
-    }
-} */
