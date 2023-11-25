@@ -48,6 +48,7 @@ arrowBTN.addEventListener("click", (e)=>{
         
         let BirthYear = ageInMilliseconds.getUTCFullYear() - 1970;
         let BirthMonth = ageInMilliseconds.getUTCMonth();
+        console.log(BirthMonth);
         let BirthDay = ageInMilliseconds.getUTCDate() - 1;
         
       
