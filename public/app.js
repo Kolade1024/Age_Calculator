@@ -35,9 +35,9 @@ arrowBTN.addEventListener("click", (e)=>{
     let timeDifference = currentDate - BirthDate;
     let ageInMilliseconds = new Date(timeDifference);
     
-    let BirthYear = ageInMilliseconds.getUTCFullYear() - 1970;
-    let BirthMonth = ageInMilliseconds.getUTCMonth();
-    let BirthDay = ageInMilliseconds.getUTCDate() - 1;
+    
+    
+   
     
   
     
@@ -61,6 +61,7 @@ arrowBTN.addEventListener("click", (e)=>{
         MONTH.classList.add("noError");
         emPty.classList.add("hidden");
         Valid.classList.add("hidden");
+        let BirthMonth = ageInMilliseconds.getUTCMonth();
         let start = 0;
         let end = Math.abs(BirthMonth);
         let myInterval = setInterval(() => {
@@ -96,6 +97,7 @@ arrowBTN.addEventListener("click", (e)=>{
         DAY.classList.add("noError");
         emPty1.classList.add("hidden");
         Valid1.classList.add("hidden");
+        let BirthDay = ageInMilliseconds.getUTCDate() - 1;
         let start = 0;
         let end = Math.abs(BirthDay);
         let myInterval = setInterval(() => {
@@ -127,6 +129,7 @@ arrowBTN.addEventListener("click", (e)=>{
         YEAR.classList.add("noError");
         emPty2.classList.add("hidden");
         Valid2.classList.add("hidden");
+        let BirthYear = ageInMilliseconds.getUTCFullYear() - 1970;
         let start = 0;
         let end = Math.abs(BirthYear);
         let myInterval = setInterval(() => {
