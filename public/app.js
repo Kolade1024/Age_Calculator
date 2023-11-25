@@ -74,14 +74,19 @@ arrowBTN.addEventListener("click", (e)=>{
             emPty.classList.add("hidden");
             Valid.classList.add("hidden");
             let start = 0;
-            let end = Math.abs(BirthMonth);
-            let myInterval = setInterval(() => {
-                start++;
-                monthsOld.textContent = start;
-                if(start==end){
-                    clearInterval(myInterval);
-                }
-            }, 50);
+            if(BirthMonth==0){
+                monthsOld.textContent = 0;
+            }else{
+                let end = Math.abs(BirthMonth);
+                let myInterval = setInterval(() => {
+                    start++;
+                    monthsOld.textContent = start;
+                    if(start==end){
+                        clearInterval(myInterval);
+                    }
+                }, 50);
+            }
+           
             
         };
     
@@ -109,6 +114,9 @@ arrowBTN.addEventListener("click", (e)=>{
             emPty1.classList.add("hidden");
             Valid1.classList.add("hidden");
             let start = 0;
+            if(BirthDay==0){
+                daysOld.textContent = 0;
+            }else{
             let end = Math.abs(BirthDay);
             let myInterval = setInterval(() => {
                 start++;
@@ -117,6 +125,7 @@ arrowBTN.addEventListener("click", (e)=>{
                     clearInterval(myInterval);
                 }
             }, 50);
+        }
         };
     
     /* YEAR VALIDATION */
@@ -140,6 +149,9 @@ arrowBTN.addEventListener("click", (e)=>{
             emPty2.classList.add("hidden");
             Valid2.classList.add("hidden");
             let start = 0;
+            if(BirthYear==0){
+                yearsOld.textContent = 0;
+            }else{
             let end = Math.abs(BirthYear);
             let myInterval = setInterval(() => {
                 start++;
@@ -148,7 +160,7 @@ arrowBTN.addEventListener("click", (e)=>{
                     clearInterval(myInterval);
                 }
             }, 50);
-            
+        }
         };
       
     }
