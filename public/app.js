@@ -27,14 +27,20 @@ const Valid2 = document.querySelector(".Year .Valid");
 
 arrowBTN.addEventListener("click", (e)=>{
 
+    let BirthDate = new Date(`${YEAR.value},${MONTH.value},${DAY.value}`);
+    console.log(BirthDate);
+    
     let currentDate = new Date();
-
-    currentYear = currentDate.getFullYear();
-
-    currentMonth = currentDate.getMonth();
-
-    currentDay = currentDate.getDate();
-
+    let currentYear = currentDate.getFullYear();
+    let timeDifference = currentDate - BirthDate;
+    let ageInMilliseconds = new Date(timeDifference);
+    
+    let BirthYear = ageInMilliseconds.getUTCFullYear() - 1970;
+    let BirthMonth = ageInMilliseconds.getUTCMonth();
+    let BirthDay = ageInMilliseconds.getUTCDate() - 1;
+    
+  
+    
 /* MONTH VALIDATION */
     if(MONTH.value>12){
         MONTH.classList.add("borderError");
@@ -56,7 +62,7 @@ arrowBTN.addEventListener("click", (e)=>{
         emPty.classList.add("hidden");
         Valid.classList.add("hidden");
         let start = 0;
-        let end = Math.abs(currentMonth-MONTH.value+1);
+        let end = Math.abs(BirthMonth);
         let myInterval = setInterval(() => {
             start++;
             monthsOld.textContent = start;
@@ -91,7 +97,7 @@ arrowBTN.addEventListener("click", (e)=>{
         emPty1.classList.add("hidden");
         Valid1.classList.add("hidden");
         let start = 0;
-        let end = Math.abs(currentDay-DAY.value+1);
+        let end = Math.abs(BirthDay);
         let myInterval = setInterval(() => {
             start++;
             daysOld.textContent = start;
@@ -122,7 +128,7 @@ arrowBTN.addEventListener("click", (e)=>{
         emPty2.classList.add("hidden");
         Valid2.classList.add("hidden");
         let start = 0;
-        let end = Math.abs(currentYear-YEAR.value);
+        let end = Math.abs(BirthYear);
         let myInterval = setInterval(() => {
             start++;
             yearsOld.textContent = start;
