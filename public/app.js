@@ -40,6 +40,7 @@ arrowBTN.addEventListener("click", (e)=>{
         YEAR.classList.remove("noError");
         console.log(BirthDate);
     }else{
+        AllValid.classList.add("hidden");
         let currentDate = new Date();
         let currentYear = currentDate.getFullYear();
         let timeDifference = currentDate - BirthDate;
